@@ -12,13 +12,12 @@
 //
 // npm install koa-convert copy-to@2 crc@3 debug@2 parseurl@1 --save
 
-import uid from 'uid-safe'
-
 import promisify from '../promisify'
+import uid from 'uid-safe'
 
 export default function(redis_options)
 {
-	throw new Error(`Session support is currently turned off. Try using JSON Web Tokens to store session data instead.`)
+	// throw new Error(`Session support is currently turned off. Try using JSON Web Tokens to store session data instead.`)
 
 	const ttl = 15 * 60 * 1000 // 15 minutes // session timeout, in seconds
 
