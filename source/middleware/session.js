@@ -1,8 +1,9 @@
-// import koa_convert   from 'koa-convert'
-//
-// import session       from 'koa-generic-session'
-// import redis_store   from 'koa-redis'
-//
+import koa_convert   from 'koa-convert'
+import promisify from '../promisify'
+import redis_store   from 'koa-redis'
+import session       from 'koa-generic-session'
+import uid from 'uid-safe'
+
 // // forked from the original repo as of 25.01.2016
 // // https://github.com/halt-hammerzeit/generic-session
 // import session       from './koa-generic-session'
@@ -12,8 +13,6 @@
 //
 // npm install koa-convert copy-to@2 crc@3 debug@2 parseurl@1 --save
 
-import promisify from '../promisify'
-import uid from 'uid-safe'
 
 export default function(redis_options)
 {
