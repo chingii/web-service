@@ -28,13 +28,6 @@ export default function(redis_options)
 			port      : redis_options.redis.port
 		})
 
-		redis_client.set("test", "testing");
-
-		// This will return a JavaScript String 
-		redis_client.get("test", function (err, reply) {
-			console.log(reply.toString()); // Will print `OK` 
-		});
-
 		const prefix = 'user:session:'
 
 		function generate_id()
