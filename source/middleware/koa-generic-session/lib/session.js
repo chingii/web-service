@@ -413,6 +413,10 @@ function hash(sess) {
  */
 function compatMaxage(opts) {
   if (opts) {
+    if(require('koa')) {
+      delete opts.maxage;
+      return;
+    }
     opts.maxage = opts.maxage === undefined
       ? opts.maxAge
       : opts.maxage;
