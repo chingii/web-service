@@ -1,14 +1,12 @@
-import util from 'util'
-
-import koa_router  from 'koa-router'
-import mount       from 'koa-mount'
-import body_parser from 'koa-bodyparser'
-
 import { exists, is_object, starts_with } from '../helpers'
 
+import body_parser from 'koa-bodyparser'
 // `http` utility
 import http from '../http'
+import koa_router  from 'koa-router'
+import mount       from 'koa-mount'
 import parse_dates from '../date parser'
+import util from 'util'
 
 export default function(options)
 {
@@ -28,9 +26,9 @@ export default function(options)
 			router[method](path, function(ctx, next)
 			{
 				// // Sessions aren't currently used
-				// const session = ctx.session
-				// const session_id = ctx.sessionId
-				// const destroy_session = () => ctx.session = null
+				const session = ctx.session
+				const session_id = ctx.sessionId
+				const destroy_session = () => ctx.session = null
 
 				// Cookie helpers
 
@@ -120,9 +118,9 @@ export default function(options)
 					destroyCookie : destroy_cookie,
 
 					// // Sessions aren't used currently
-					// session,
-					// session_id,
-					// destroy_session,
+					session,
+					session_id,
+					destroy_session,
 
 					// JWT stuff
 					user                    : ctx.user,
