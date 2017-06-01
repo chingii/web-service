@@ -59,7 +59,14 @@ export default function(redis_options)
 			store  : redis_store
 			({
 				client : redis_client
-			})
+			}),
+			cookie: {
+				path: '/', 
+				httpOnly: false, 
+				maxAge: null, 
+				rewrite: true, 
+				signed: true
+			}
 		}))
 	}
 	else
