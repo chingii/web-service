@@ -62,7 +62,7 @@ export default function(redis_options)
 			}),
 			cookie: {
 				path: '/', 
-				httpOnly: false, 
+				httpOnly: true, 
 				maxAge: null, 
 				rewrite: true, 
 				signed: true
